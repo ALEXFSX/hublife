@@ -1,0 +1,10 @@
+@import 'bootstrap/bootstrap';
+@import 'owl-carousel/owl.carousel';
+@import 'owl-carousel/owl.theme.default';
+@import 'leaflet/leaflet';
+@import 'font-awesome/font-awesome';
+
+// existe um problema no fancybox ao ser processado 
+// pelo gulp-sass, portanto apenas o importamos de um cdn
+@import 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css';
+

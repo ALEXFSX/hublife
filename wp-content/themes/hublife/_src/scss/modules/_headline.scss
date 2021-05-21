@@ -1,0 +1,30 @@
+/*------------------
+|	HEADLINE
+|------------------*/
+
+.#{$prefix}-headline {
+  $self: &;
+  margin-bottom: 30px;
+  display: block;
+  .title {
+    color: cl(main, secondary);
+    font-size: rem(32);
+    font-weight: 600;
+    line-height: 1;
+
+  }
+  .subtitle {
+    color: cl(main, secondary);
+    font-size: rem(18);
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 0;
+  }
+
+  @include m("white") {
+    .title,
+    .subtitle {
+      color: #fff;
+    }
+  }
+}

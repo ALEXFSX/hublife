@@ -1,0 +1,31 @@
+/*------------------
+|  BLOG FRONT
+|------------------*/
+.#{$prefix}-blog-front {
+  $self: &;
+  padding: 80px 0;
+  @include e("grid") {
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 0px 50px;
+    grid-template-columns: 1fr;
+    grid-template-areas: ".";
+    @include respond-to(md) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas: ". . .";
+    }
+  }
+  @include e("cta") {
+    display: block;
+    width: fit-content $i;
+  }
+
+  .#{$prefix}-blog-card {
+    margin-bottom: 50px;
+    align-self: center;
+    justify-self: center;
+    @include respond-to(md) {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+/*------------------
+|	SECTION VIDEO
+|------------------*/
+
+.#{$prefix}-video {
+  $self: &;
+  padding: 70px 0 100px;
+  background: url(../images/bg-video.png) no-repeat center center / cover fixed;
+  .thumb {
+    position: relative;
+    max-width: 700px;
+    margin: 10px auto 0;
+    z-index: 1;
+    &:after {
+        content: "";
+        @include size(250px);
+        position: absolute;
+        right: -145px;
+        bottom: -75px;
+        z-index: -1;
+        background: url(../images/logo-prop.png) center center/contain no-repeat;
+    }
+    img{
+        @include size(100%);
+        object-fit: contain;
+       filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+    }
+    .play-btn {
+      @include size(80px);
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      background: url(../images/play-sign.png) no-repeat center center / cover;
+      filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
+      &:hover {
+        &:before {
+          animation: rotatePlayPropIn .3s ease-out;
+          animation-iteration-count: 1;
+        }
+      }
+      &:before {
+        content: "";
+        @include size(100px);
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        background: url(../images/play-sign-prop.png) center center/cover
+          no-repeat;
+
+          animation: rotatePlayPropOut .3s ease-out;
+          animation-iteration-count: 1;
+      }
+    }
+  }
+}
+
+@keyframes rotatePlayPropIn {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+}
+
+@keyframes rotatePlayPropOut {
+    from {
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+  }
+  

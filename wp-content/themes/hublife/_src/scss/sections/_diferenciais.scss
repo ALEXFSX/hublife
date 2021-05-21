@@ -1,0 +1,101 @@
+/*------------------
+|	BUTTONS
+|------------------*/
+
+.#{$prefix}-dif {
+  $self: &;
+  padding: 0 0 50px;
+  background-color: #fff;
+
+  @include respond-to(md) {
+    padding: 0 0 100px;
+  }
+  @include m("reverse") {
+    .row {
+      flex-direction: column-reverse;
+      @media (min-width: 992px) {
+        flex-direction: row;
+      }
+    }
+  }
+
+  @include e("content") {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-start;
+  }
+
+  @include e("text") {
+    text-align: left;
+    padding: 10px 0;
+
+    @include respond-to(md) {
+      padding: 20px 30px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: cl(text, grey);
+      font-weight: 600;
+      font-size: rem(25);
+      letter-spacing: 2px;
+      text-align: center;
+
+      @include respond-to(md) {
+        font-weight: 600;
+        font-size: rem(40);
+        text-align: left; 
+      }
+    }
+    p {
+      color: cl(text, dark-grey);
+      font-weight: 300;
+      font-size: rem(15);
+      margin-bottom: 20px;
+      text-align: center;
+      @include respond-to(md) {
+        font-size: rem(18);
+        text-align: left; 
+           }
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        font-weight: 300;
+        list-style: none;
+        position: relative;
+        line-height: 2;
+        font-size: rem(16);
+        color: cl(text, dark-grey);
+        &:before {
+          @include icone("\f00c");
+          color: cl(main, primary);
+          font-size: rem(19);
+          line-height: 1;
+          height: 100%;
+          text-align: center;
+          margin-right: 5px;
+        }
+      }
+    }
+    a {
+      @extend .#{$prefix}-btn;
+      width: fit-content $i;
+      font-weight: 600;
+      margin: 0 auto
+    }
+  }
+  @include e("image") {
+    img {
+      @include size(100%);
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+}

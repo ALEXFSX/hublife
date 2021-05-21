@@ -1,0 +1,46 @@
+/*------------------
+|	 BLOG
+|------------------*/
+
+.#{$prefix}-blog-card {
+  $self: &;
+
+  max-width: 350px;
+  border-bottom: 2px solid #e1e1e1;
+  .thumbnail {
+    @include size(100%, 250px);
+    overflow: hidden;
+    border-radius: 10px;
+    img {
+      @include size(100%);
+      object-fit: cover;
+    }
+  }
+  .title {
+    text-align: left;
+    color: cl(text, pink);
+    font-size: rem(20);
+    
+  }
+  .preview {
+    color: cl(text, dark-grey);
+    font-weight: 300;
+    font-size: rem(18);
+    text-align: left;
+  }
+  .link {
+    display: block;
+    margin: 10px 0;
+    text-align: left;
+    color: cl(text, dark-grey);
+    font-weight: 600;
+    font-size: rem(19);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    width: fit-content;
+    &:hover{
+      color: cl(text, pink);
+   transition: color 0.3s ease-in-out;
+    }
+  }
+}

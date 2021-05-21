@@ -1,0 +1,40 @@
+/*------------------
+|	BUTTONS
+|------------------*/
+
+.#{$prefix}-btn {
+  $self: &;
+  background: cl(btns, primary);
+  color: cl(white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: rem(10) rem(28);
+  font-family: $font-default;
+  border-radius: 100px;
+  text-decoration: none;
+  &:hover {
+    background: darken(cl(btns, primary), 5%);
+    transition: all 0.6s;
+    color: cl(white);
+  }
+
+@include m('white') {
+  background: cl(white);
+  color:cl(btns, primary);
+
+  &:hover {
+    background: darken(cl(white), 5%);
+    transition: all 0.6s;
+    color:cl(btns, primary);
+  }
+  }
+
+@include m('bold') {
+font-weight: 600;
+  }
+
+}

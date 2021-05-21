@@ -1,0 +1,42 @@
+.owl-carousel {
+  .owl-dots {
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    height: 10px;
+    z-index: 99999999;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    .owl-dot {
+        display: flex;
+      &.active {
+        span {
+          background: cl(main, primary);
+          width: 30px;
+        
+        }
+      
+      }
+      span {
+        background: #bdc1c4;
+        display: flex;
+        height: 10px;
+        margin:0 10px;
+        transform-origin: 50% 50% 0;
+        transition: all 250ms ease-out 0s;
+        width: 10px;
+        border-radius: 40px;
+      }
+
+      &:hover {
+        span {
+            background: cl(main, primary);
+
+        }
+      }
+    }
+  }
+}

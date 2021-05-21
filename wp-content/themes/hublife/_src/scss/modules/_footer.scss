@@ -1,0 +1,62 @@
+/*------------------
+|  FOOTER  
+|------------------*/
+.#{$prefix}-footer {
+  $self: &;
+  background-color: cl(main, secondary);
+padding: 60px 0 20px 0;
+  @include e("address") {
+    color: cl(white);
+    .wrap {
+      text-align: center;
+
+      @include respond-to(md) {
+        text-align: left;
+      }
+      p {
+        margin: 0;
+      }
+    }
+  }
+  @include e("phone") {
+    color: cl(white);
+    .wrap {
+      text-align: center;
+
+      @include respond-to(md) {
+        text-align: left;
+      }
+
+      p {
+        margin: 0;
+      }
+      a {
+        color: cl(white);
+        &:hover {
+            color: cl(main, primary);
+          }
+      }
+    }
+  }
+  @include e("social") {
+    .list {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      color: cl(white);
+      margin: 0;
+      .item {
+        margin-left: 20px;
+        &:nth-child(1) {
+          margin-left: 0;
+        }
+        .icon {
+          color: cl(white);
+          &:hover {
+            color: cl(main, primary);
+          }
+        }
+      }
+    }
+  }
+}

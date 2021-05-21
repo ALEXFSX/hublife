@@ -1,0 +1,103 @@
+// **
+// Color Scheme 0.0.1
+// Scheme from colors for the project
+//
+// From DEV Undergrond
+// Participants: Alex Freitas
+//
+// We use two variables:
+// $colors  - Map from colors default from the project.
+// $palette - Tonality from the colors primarys, secondarys, etc.
+// **
+
+// Project colors
+// Map from colors default from the project.
+
+$colors: (
+  black: #000000,
+  blue: #003383,
+  blueLigth: #0e6ed6,
+  blueDarken: #001950,
+  gray: #454545,
+  grayDarken: #555555,
+  orange: #f57010,
+  white: #ffffff,
+  yellow: #ffb700,
+  pink: #ed145b,
+  // semantic colors
+  // sucess, error, information
+  btns:
+    (
+      primary: #e9446e,
+      secondary: #4b555c
+    ),
+  titles: (
+    primary: #e9446e,
+    secondary: #4b555c
+  ),
+
+
+  text: (
+    pink: #e9446e,
+    grey: #4b555c,
+    dark-grey: #525252,
+    white: #ffffff,
+  ),
+  // semantic colors
+  // sucess, error, information
+  semantic:
+    (
+      sucess: #12bc00,
+      info: #0a84ff,
+      warning: #d76e00,
+      error: #d70022
+    ),
+  // default colors
+  // brand color, link, button, etc
+  main:
+    (
+      primary: #e9446e,
+      // brand logo
+      secondary: #4b555c,
+      // brand logo sec
+      third: #00bba3,
+      // brand logo third
+      link: #45a1ff
+    )
+);
+
+// Color = cl
+// Colors function
+@function cl($color-name, $color-variant: null) {
+  // color variant is optional
+  @if ($color-variant != null) {
+    @if map-has-key($colors, $color-name) {
+      @return map-get(map-get($colors, $color-name), $color-variant);
+    }
+  } @else {
+    @return map-get($colors, $color-name);
+  }
+
+  @warn "Unknown `#{$color-name}` in $palettes.";
+  @return null;
+}
+
+// Construction
+@mixin make-color($name: color) {
+  @each $theme in map-keys($colors) {
+    @each $length in map-get($colors, $theme) {
+      @if (length($length) >= 2) {
+        .#{$name}-#{$theme}-#{ nth($length, 1) },
+        %#{$name}-#{$theme}-#{ nth($length, 1) } {
+          color: nth($length, 2);
+        }
+      } @else {
+        .#{$name}-#{$theme} %#{$name}-#{$theme} {
+          color: #{nth($length, 1)};
+        }
+      }
+    }
+  }
+}
+
+// @include make-color($prefix + 'color');

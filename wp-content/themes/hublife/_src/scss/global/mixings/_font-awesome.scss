@@ -1,0 +1,10 @@
+// -----------------------------------------------------------
+// FontAwesome
+// Requer Vendor Font Awesome
+// -----------------------------------------------------------
+
+@mixin icone($icone) {
+  font-family: FontAwesome;
+  @extend .fa !optional;
+  content: $icone;
+}

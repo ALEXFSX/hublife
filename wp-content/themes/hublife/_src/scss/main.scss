@@ -1,0 +1,36 @@
+//==========================================================================
+// PREFIX VAR
+//==========================================================================
+$prefix: "hl";
+
+@import "vendor/index";
+@import "global/index";
+
+
+
+
+main,
+footer {
+  transition: all 0.3s ease-in-out;
+  &.fog {
+    filter: brightness(0.8) blur(2px);
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.#{$prefix}-sections {
+  float: left;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  padding: 50px 0;
+}
+
+#map-leaflet{
+  height: 50vh $i;
+}
+
+
+
+@import "sections/index";
+@import "modules/index";
